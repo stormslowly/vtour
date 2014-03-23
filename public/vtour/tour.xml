@@ -1,0 +1,109 @@
+<krpano version="1.16" title="Virtual Tour" onstart="startup();">
+
+	<include url="skin/vtourskin.xml" />
+
+	<!-- set skin settings: bingmaps? gyro? thumbnail controlling? tooltips? -->
+	<skin_settings bingmaps="false"
+	               bingmaps_key=""
+	               bingmaps_zoombuttons="false"
+	               gyro="true"
+	               thumbs_width="120" thumbs_height="80" thumbs_padding="10" thumbs_crop="0|40|240|160"
+	               thumbs_opened="false"
+	               thumbs_text="false"
+	               thumbs_dragging="true"
+	               thumbs_onhoverscrolling="false"
+	               thumbs_scrollbuttons="false"
+	               thumbs_scrollindicator="false"
+	               tooltips_thumbs="false"
+	               tooltips_hotspots="false"
+	               tooltips_mapspots="false"
+	               controlbar_offset="20"
+	               />
+
+	<!-- set optional skin logo url -->
+	<layer name="skin_logo" url="" scale="0.25" opened_onclick="openurl('...',_blank);" />
+
+
+	<!-- hotspot style predefines - black hotspot -->
+	<style name="hotspot_ani_black"
+	       url="hotspot_ani_black_64x64x20.png"
+	       crop="0|0|64|64"
+	       framewidth="64" frameheight="64" frame="0" lastframe="19"
+	       onloaded="hotspot_animate();"
+	       />
+
+	<!-- hotspot style predefines - white hotspot -->
+	<style name="hotspot_ani_white"
+	       url="hotspot_ani_white_64x64x20.png"
+	       crop="0|0|64|64"
+	       framewidth="64" frameheight="64" frame="0" lastframe="19"
+	       onloaded="hotspot_animate();"
+	       />
+
+	<!-- hotspot animation action -->
+	<action name="hotspot_animate">
+		inc(frame,1,get(lastframe),0);
+		mul(ypos,frame,frameheight);
+		txtadd(crop,'0|',get(ypos),'|',get(framewidth),'|',get(frameheight));
+		delayedcall(0.03, if(loaded, hotspot_animate() ) );
+	</action>
+
+
+	<action name="startup">
+		if(startscene === null, copy(startscene,scene[0].name));
+		loadscene(get(startscene), null, MERGE);
+	</action>
+
+
+	<scene name="scene_global" title="global" onstart="" thumburl="panos/global.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0" vlookat="0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/global.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512" progressive="false">
+			<level tiledimagewidth="1304" tiledimageheight="1304">
+				<cube url="panos/global.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="652" tiledimageheight="652">
+				<cube url="panos/global.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+			<mobile>
+				<cube url="panos/global.tiles/mobile_%s.jpg" />
+			</mobile>
+		</image>
+
+
+
+		<hotspot name="house22" style="hotspot_ani_black" ath="-53.588" atv="-5.161" linkedscene="scene_house" onclick="loadscene(scene_house)"/>
+
+		<hotspot name="house" style="shufang" ath="-49.588" atv="-5.161" />
+
+		<!-- place your scene hotspots here -->
+
+	</scene>
+
+	<scene name="scene_house" title="house" onstart="" thumburl="panos/house.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0" vlookat="0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/house.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512" progressive="false">
+			<level tiledimagewidth="1304" tiledimageheight="1304">
+				<cube url="panos/house.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="652" tiledimageheight="652">
+				<cube url="panos/house.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+			<mobile>
+				<cube url="panos/house.tiles/mobile_%s.jpg" />
+			</mobile>
+		</image>
+
+		<!-- place your scene hotspots here -->
+
+	</scene>
+
+
+</krpano>
