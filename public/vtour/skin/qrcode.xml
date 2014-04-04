@@ -1,0 +1,17 @@
+ <krpano>
+    <plugin
+        name="QRCode"
+        parent=""
+        title="二维码"
+        visible="true"
+        keep="true"
+        scale="0.75"
+        url="%FIRSTXML%/images/qrcode.png"
+        onclick="
+            openurl('http://www.baidu.com',_blank);
+        "
+        align="lefttop"
+        x="10"
+        y="10"
+        />
+</krpano>

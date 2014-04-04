@@ -1,0 +1,36 @@
+   <plugin
+        name="MapMenu"
+        parent=""
+        align="righttop"
+        url="%FIRSTXML%/images/mapres.png"
+        keep="true"
+
+        crop="140|9|284|27"
+        x="2" y="4"
+        zorder="1000"
+        />
+    <plugin
+        name="MapButton"
+        parent="MapMenu"
+        align="right"
+        url="%FIRSTXML%/images/mapres.png"
+        keep="true"
+
+        crop="378|61|18|17"
+        x="5" y="0"
+
+        onclick="
+            showlog();
+            trace('map button clicked');
+        "
+        zorder="1001"
+        />
+    <plugin
+        name="MapBox"
+        parent="MapMenu"
+        align="lefttop"
+        url="%FIRSTXML%/images/mapres.png"
+        keep="true"
+        x="2" y="4"
+        zorder="000"
+        />
