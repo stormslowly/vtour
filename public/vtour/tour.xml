@@ -79,6 +79,69 @@
 
 		<hotspot name="house" style="shufang" ath="-49.588" atv="-5.161" />
 
+		<hotspot
+
+
+
+			borderalpha="0.0"
+			borderalphahover="0.8"
+			bordercolor="0xFFFFFF"
+			bordercolorhover="0xFFFFFF"
+			borderwidth="0"
+			borderwidthhover="2"
+			buffertime="0.1"
+			capture="False"
+			directionalsound="False"
+
+			fillalpha="0.0"
+			fillalphahover="0.2"
+			fillcolor="0xFFFFFF"
+			fillcolorhover="0xFFFFFF"
+
+
+
+			ondown=""
+
+
+			onout=""
+			onover=""
+			onup=""
+			pausedonstart="False"
+			range=""
+			refreshrate=""
+
+			name="apple video"
+			ath="-30.588"
+			atv="-2.733911599086792"
+			url="/%SWFPATH%/plugins/videoplayer.swf"
+			videourl="/%SWFPATH%/videos/video.flv"
+
+			flying="0"
+			scale="1"
+			alpha="1"
+			distorted="true"
+			enabled="true"
+			rotatewithview="true"
+			handcursor="true"
+			onclick="togglepause();"
+			blendmode="NORMAL"
+			loop="true"
+			smoothing="true"
+			updateeveryframe="True"
+			visible="true"
+			volume="1"
+			width="320"
+			height="240"
+			zoom="True"
+			zorder="1"
+			onhover="
+				if(ispaused,showtext('点击播放!');,
+					showtext('点击暂停!'));"
+
+	    />
+
+
+
 		<!-- place your scene hotspots here -->
 
 	</scene>
@@ -100,6 +163,9 @@
 				<cube url="panos/house.tiles/mobile_%s.jpg" />
 			</mobile>
 		</image>
+
+
+
 
 		<!-- place your scene hotspots here -->
 
