@@ -80,42 +80,11 @@
 		<hotspot name="house" style="shufang" ath="-49.588" atv="-5.161" />
 
 		<hotspot
-
-
-
-			borderalpha="0.0"
-			borderalphahover="0.8"
-			bordercolor="0xFFFFFF"
-			bordercolorhover="0xFFFFFF"
-			borderwidth="0"
-			borderwidthhover="2"
-			buffertime="0.1"
-			capture="False"
-			directionalsound="False"
-
-			fillalpha="0.0"
-			fillalphahover="0.2"
-			fillcolor="0xFFFFFF"
-			fillcolorhover="0xFFFFFF"
-
-
-
-			ondown=""
-
-
-			onout=""
-			onover=""
-			onup=""
-			pausedonstart="False"
-			range=""
-			refreshrate=""
-
-			name="apple video"
+			name="apple_video"
 			ath="-30.588"
 			atv="-2.733911599086792"
 			url="/%SWFPATH%/plugins/videoplayer.swf"
 			videourl="/%SWFPATH%/videos/video.flv"
-
 			flying="0"
 			scale="1"
 			alpha="1"
@@ -137,9 +106,69 @@
 			onhover="
 				if(ispaused,showtext('点击播放!');,
 					showtext('点击暂停!'));"
-
+			borderalpha="0.0"
+			borderalphahover="0.8"
+			bordercolor="0xFFFFFF"
+			bordercolorhover="0xFFFFFF"
+			borderwidth="0"
+			borderwidthhover="2"
+			buffertime="0.1"
+			capture="False"
+			directionalsound="False"
+			fillalpha="0.0"
+			fillalphahover="0.2"
+			fillcolor="0xFFFFFF"
+			fillcolorhover="0xFFFFFF"
+			ondown=""
+			onout=""
+			onover=""
+			onup=""
+			pausedonstart="False"
+			range=""
+			refreshrate=""
 	    />
 
+		<hotspot
+			alpha="1.0" ath="0" atv="0"
+			blendmode="NORMAL"
+			borderalpha="0.0"
+			borderalphahover="0.8"
+			bordercolor="0xFFFFFF"
+			bordercolorhover="0xFFFFFF"
+			borderwidth="0"
+			borderwidthhover="2"
+			buffertime="0.1"
+			capture="False"
+			directionalsound="False" distorted="False" enabled="True" fillalpha="0.0" fillalphahover="0.2" fillcolor="0xFFFFFF" fillcolorhover="0xFFFFFF" flying="0" handcursor="True" height="" loop="True"
+
+			name="teatable"
+			onclick="
+				set(plugin[teatable].y,-800);
+				tween(plugin[teatable].y,0,0.1,wait);
+				tween(plugin[teatable].alpha,1,0.1);
+				"
+			ondown=""
+			onhover="showtext('tea table');"
+			onout="" onover="" onup="" pausedonstart="False" range="" refreshrate="" rotatewithview="False" rx="0" ry="0" rz="0" scale="1.00" smoothing="True" updateeveryframe="True" url="" videourl=""
+
+			visible="True" volume="1" width="" zoom="False" zorder="1" />
+		<plugin
+			align="center"
+			alpha="1.0"
+			autosize="none"
+			background="False"
+			backgroundcolor="0xFFFFFF" blendmode="NORMAL" blur="0" bordercolor="0x000000" borderwidth="1" capture="False" children="True" crop="" css="" edge="center" effect="" enabled="True" glow="0" glowcolor="0xFFFFFF" handcursor="True"  html="" keep="False" mask="" name="teatable"
+
+			onclick="
+				tween(alpha,0,0.1);
+				tween(y,-800);
+			"
+			ondown="" ondowncrop="" onhover="" onloaded="" onout="" onover="" onovercrop="" onup="" ox="0" parent="" preload="False" refreshrate="" rotate="0" roundedge="0" scale="1" scale9grid="" scalechildren="True" selectable="False" shadow="0" smoothing="True" style="0" textblur="0" textglow="0" textglowcolor="0xFFFFFF" textshadow=""
+
+			url="%FIRSTXML%scene/1/Plugin/teatable.jpg"
+			visible="True"
+			width="" height=""
+			x="0" y="-800" zorder="1000"/>
 
 
 		<!-- place your scene hotspots here -->
