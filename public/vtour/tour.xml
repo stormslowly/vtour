@@ -128,48 +128,79 @@
 			refreshrate=""
 	    />
 
-		<hotspot
-			alpha="1.0" ath="0" atv="0"
-			blendmode="NORMAL"
-			borderalpha="0.0"
-			borderalphahover="0.8"
-			bordercolor="0xFFFFFF"
-			bordercolorhover="0xFFFFFF"
-			borderwidth="0"
-			borderwidthhover="2"
-			buffertime="0.1"
-			capture="False"
-			directionalsound="False" distorted="False" enabled="True" fillalpha="0.0" fillalphahover="0.2" fillcolor="0xFFFFFF" fillcolorhover="0xFFFFFF" flying="0" handcursor="True" height="" loop="True"
 
-			name="teatable"
-			onclick="
-				set(plugin[teatable].y,-800);
-				tween(plugin[teatable].y,0,0.1,wait);
-				tween(plugin[teatable].alpha,1,0.1);
-				"
-			ondown=""
-			onhover="showtext('tea table');"
-			onout="" onover="" onup="" pausedonstart="False" range="" refreshrate="" rotatewithview="False" rx="0" ry="0" rz="0" scale="1.00" smoothing="True" updateeveryframe="True" url="" videourl=""
+	<hotspot  alpha="1.0"
 
-			visible="True" volume="1" width="" zoom="False" zorder="1" />
-		<plugin
-			align="center"
-			alpha="1.0"
-			autosize="none"
-			background="False"
-			backgroundcolor="0xFFFFFF" blendmode="NORMAL" blur="0" bordercolor="0x000000" borderwidth="1" capture="False" children="True" crop="" css="" edge="center" effect="" enabled="True" glow="0" glowcolor="0xFFFFFF" handcursor="True"  html="" keep="False" mask="" name="teatable"
+		name="teatable"
+		blendmode="NORMAL"
+		borderalpha="0.0"
+		borderalphahover="0.8"
+		bordercolor="0xFFFFFF"
+		bordercolorhover="0xFFFFFF"
+		borderwidth="0"
+		borderwidthhover="2"
+		buffertime="0.1" capture="False"
+		directionalsound="False"
+		distorted="False"
+		enabled="True"
+		fillalpha="0.3"
+		fillcolor="0xFF00FF"
+		fillalphahover="0.2"
+		fillcolorhover="0xFFFFFF"
+		flying="0" handcursor="True"
+		loop="True"
+		onclick="
+			set(plugin[introduce].y,-800);
+			tween(plugin[introduce].y,0,0.1,easeOutElastic);
+			tween(plugin[introduce].alpha,1,0.1);"
 
-			onclick="
-				tween(alpha,0,0.1);
-				tween(y,-800);
-			"
-			ondown="" ondowncrop="" onhover="" onloaded="" onout="" onover="" onovercrop="" onup="" ox="0" parent="" preload="False" refreshrate="" rotate="0" roundedge="0" scale="1" scale9grid="" scalechildren="True" selectable="False" shadow="0" smoothing="True" style="0" textblur="0" textglow="0" textglowcolor="0xFFFFFF" textshadow=""
+		ondown="" onhover="showtext('tea table');"
 
-			url="%FIRSTXML%scene/1/Plugin/teatable.jpg"
-			visible="True"
-			width="" height=""
-			x="0" y="-800" zorder="1000"/>
+		onout="" onover="" onup="" pausedonstart="False" range="" refreshrate="" rotatewithview="False" rx="0" ry="0" rz="0" scale="1.00" smoothing="True" updateeveryframe="True"  visible="True" volume="1" width="" zoom="False" zorder="1">
+        <point ath="-30.35170894577982" atv="39.12927203018675"/>
+        <point ath="-32.27746459877187" atv="38.499501888705765"/>
+        <point ath="-33.3023108958447" atv="37.1310217795038"/>
+        <point ath="-50.78288125378282" atv="27.41345207159566"/>
+        <point ath="-51.50494724385834" atv="27.537980963057595"/>
+        <point ath="-52.5701202973147" atv="27.024223269121876"/>
+        <point ath="-52.559147502108544" atv="26.224187564128904"/>
+        <point ath="-52.791204982775525" atv="25.89558632795234"/>
+        <point ath="-52.824252254911926" atv="19.445991572817505"/>
+        <point ath="-41.56710762747042" atv="17.22433874659917"/>
+        <point ath="-19.661497725535412" atv="23.457937544936147"/>
+        <point ath="-19.779158271855635" atv="30.933522045599417"/>
+        <point ath="-20.011423078954976" atv="31.05728322068496"/>
+        <point ath="-19.997966504233432" atv="31.877806104753887"/>
+        <point ath="-20.45733163866737" atv="32.211536146709434"/>
+        <point ath="-21.059281088379236" atv="31.928017827638754"/>
+        <point ath="-28.089776851586634" atv="37.35313866330465"/>
+        <point ath="-28.336402515976033" atv="37.86595204233574"/>
+        <point ath="-28.832974415089893" atv="38.71254946095746"/>
+    </hotspot>
 
+	<plugin
+		name="introduce"
+		width="" height=""
+		x="0" y="0" zorder="1020"
+		align="center"
+
+		url="%FIRSTXML%/images/qrcode.png"
+		visible="true"
+		onclick="tween(alpha,0,0.1);tween(y,-800);"
+
+		alpha="1.0" autosize="none"
+
+		style=""
+		textblur="0"
+		textglow="0"
+		textglowcolor="0xFFFFFF"
+		textshadow=""
+
+		background="true"
+		backgroundcolor="0xFF00FF"
+		blendmode="NORMAL" blur="0" bordercolor="0x000000" borderwidth="1" capture="False" children="True" crop="" css="" edge="center" effect="" enabled="True" glow="0" glowcolor="0xFFFFFF" handcursor="true" html="" keep="False" mask=""
+
+    />
 
 		<!-- place your scene hotspots here -->
 
