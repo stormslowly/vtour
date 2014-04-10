@@ -181,10 +181,10 @@
 	<plugin
 		name="introduce"
 		width="" height=""
-		x="0" y="0" zorder="1020"
+		x="0" y="-800" zorder="1020"
 		align="center"
 
-		url="%FIRSTXML%/images/qrcode.png"
+		url="%FIRSTXML%/images/introduce.jpg"
 		visible="true"
 		onclick="tween(alpha,0,0.1);tween(y,-800);"
 
