@@ -1,3 +1,4 @@
+<krpano>
    <plugin
         name="MapMenu"
         parent=""
@@ -9,13 +10,14 @@
         x="2" y="4"
         zorder="1000"
         />
+
     <plugin
         name="MapButton"
         parent="MapMenu"
         align="right"
         url="%FIRSTXML%/images/mapres.png"
         keep="true"
-        crop="378|61|18|17"
+        crop="377|60|20|19"
         onovercrop="378|41|18|17"
         ondowncrop="378|61|18|17"
         x="5" y="0"
@@ -24,7 +26,7 @@
             trace('map button clicked');
             switch(plugin[MapBox].visible);
             if (plugin[MapBox].visible==false,
-                set(crop,378|61|18|17);
+                set(crop,377|60|19|18);
                 set(onovercrop,378|41|18|17);
                 set(ondowncrop,378|61|18|17);,
 
@@ -37,6 +39,7 @@
         />
     <plugin
         name="MapBox"
+        alpha="0.7"
         parent="MapMenu"
         align="lefttop"
         url="%FIRSTXML%/images/mapres.png"
@@ -49,16 +52,16 @@
     <plugin
         name="MapMask"
         parent="MapBox"
+        maskchildren ="true"
         align="lefttop"
         url="%FIRSTXML%/images/mapres.png"
         keep="true"
-        crop="436|88|280|300"
+        crop="142|88|280|300"
         x="1" y="1" zorder="1"
         />
-
     <plugin
         name="Map"
-        parent="MapBox"
+        parent="MapMask"
         align="lefttop"
         url="%FIRSTXML%/images/map.png"
         keep="true"
@@ -73,6 +76,7 @@
             copy(dx,mouse.x);
             copy(dy,mouse.y);
         "
+
         onhover="
             if (drag==true,
                 sub(dx,mouse.x);
@@ -82,9 +86,7 @@
                 set(x,get(mx));
                 set(y,get(my));
                 copy(dx,mouse.x);
-                copy(dy,mouse.y);,)
-        "
-        onloaded="resetsize();"
+                copy(dy,mouse.y););"
         onout="tween(alpha,1,0.1);"
         onover="tween(alpha,1,0.1);"
         onup="
@@ -105,27 +107,21 @@
             if (my LT may,set(my,get(may)),);
             tween(x,get(mx),0.1);tween(y,get(my),0.1);
             set(drag,false);"
-        ox="0" oy="0"
+
     />
 
     <action name="_ac_spot_onover"/>
     <action name="_ac_spot_onout"/>
     <action name="_ac_spot_onhover">showtext(get(hint));</action>
-
    <plugin
     name="spot_2"
     align="lefttop" edge="center" heading="-20.15"
     hint="到农村去"
-
-    icon_active="%SWFPATH%/images/spot/icon_active.png"
-    icon_init="%SWFPATH%/images/spot/icon_init.png"
-    icon_onhover="%SWFPATH%/images/spot/icon_onhover.png"
-    icon_visit="%SWFPATH%/images/spot/icon_visit.png"
-
     keep="true"
     onclick="
         copy(plugin[radar_map].x,x);
         copy(plugin[radar_map].y,y);
+        set(plugin[radar_map].heading,0);
         loadscene(scene_house);
     "
     ondown=""
@@ -134,10 +130,11 @@
     onout="_ac_spot_onout();"
     onover="_ac_spot_onover();"
     onup=""
-
     parent="Map"
-
-    preload="true" url="%SWFPATH%/images/spot/icon_init.png" x="89" y="213" zorder="1001"/>
+    preload="true"
+    url="%SWFPATH%/images/spot/icon_init.png"
+    x="89" y="213" zorder="1001"
+    />
 
     <plugin
         align="lefttop"
@@ -154,4 +151,4 @@
         width="180"
         x="89" y="213"
     />
-
+</krpano>

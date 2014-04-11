@@ -80,9 +80,11 @@
 		<hotspot name="house" style="shufang" ath="-49.588" atv="-5.161" />
 
 		<hotspot
+			devices="!mobile+!ios"
 			name="apple_video"
 			ath="-30.588"
 			atv="-2.733911599086792"
+			alturl="/%SWFPATH%/plugins/videoplayer.js"
 			url="/%SWFPATH%/plugins/videoplayer.swf"
 			videourl="/%SWFPATH%/videos/video.flv"
 			flying="0"
@@ -129,34 +131,33 @@
 	    />
 
 
-	<hotspot  alpha="1.0"
-
+	<hotspot
+		devices ="!mobile+!ios"
 		name="teatable"
-		blendmode="NORMAL"
-		borderalpha="0.0"
-		borderalphahover="0.8"
-		bordercolor="0xFFFFFF"
-		bordercolorhover="0xFFFFFF"
-		borderwidth="0"
-		borderwidthhover="2"
-		buffertime="0.1" capture="False"
-		directionalsound="False"
-		distorted="False"
-		enabled="True"
-		fillalpha="0.3"
-		fillcolor="0xFF00FF"
-		fillalphahover="0.2"
-		fillcolorhover="0xFFFFFF"
-		flying="0" handcursor="True"
-		loop="True"
+		keep="false"
+		visible="true"
+		enabled="true"
+		handcursor="true"
+		zorder=""
+		style=""
+		alpha="1.0"
+		fillcolor="0xFF00FF" fillcolorhover="0xFFFFFF"
+		fillalpha="0.3"  fillalphahover="0.2"
+
+		borderwidth="0" borderwidthhover="2"
+		bordercolor="0xFFFFFF" bordercolorhover="0xFFFFFF"
+
+		borderalpha="0.0" borderalphahover="0.8"
+		onover=""
+		onhover="showtext('tea table');"
+		onout=""
 		onclick="
 			set(plugin[introduce].y,-800);
 			tween(plugin[introduce].y,0,0.1,easeOutElastic);
 			tween(plugin[introduce].alpha,1,0.1);"
-
-		ondown="" onhover="showtext('tea table');"
-
-		onout="" onover="" onup="" pausedonstart="False" range="" refreshrate="" rotatewithview="False" rx="0" ry="0" rz="0" scale="1.00" smoothing="True" updateeveryframe="True"  visible="True" volume="1" width="" zoom="False" zorder="1">
+		ondown=""
+		onup=""
+	>
         <point ath="-30.35170894577982" atv="39.12927203018675"/>
         <point ath="-32.27746459877187" atv="38.499501888705765"/>
         <point ath="-33.3023108958447" atv="37.1310217795038"/>
