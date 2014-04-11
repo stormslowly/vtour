@@ -22,6 +22,7 @@
         onclick="
             showlog();
             trace('map button clicked');
+            switch(plugin[MapBox].visible);
         "
         zorder="1001"
         />
@@ -30,7 +31,30 @@
         parent="MapMenu"
         align="lefttop"
         url="%FIRSTXML%/images/mapres.png"
+        crop="142|88|282|302"
         keep="true"
-        x="2" y="4"
+        x="2" y="28"
         zorder="000"
+
         />
+    <plugin
+        name="MapMask"
+        parent="MapBox"
+        align="lefttop"
+        url="%FIRSTXML%/images/mapres.png"
+        keep="true"
+        crop="436|88|280|300"
+        x="1" y="1" zorder="1"
+        />
+
+    <plugin
+        name="Map"
+        parent="MapBox"
+        align="lefttop"
+        url="%FIRSTXML%/images/map.png"
+        keep="true"
+        onloaded="resetsize();"
+        mask="MapMask"
+        x="-20" y="-20"
+        ox="0" oy="0" zorder="1100"
+    />
