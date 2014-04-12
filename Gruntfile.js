@@ -34,7 +34,8 @@ module.exports = function(grunt) {
         },
         files: [
           'public/vtour/**/*.xml',
-          'public/vtour/tour.html'
+          'public/vtour/tour.html',
+          'public/vtour/**/*.js'
         ]
       }
     }

@@ -9,6 +9,8 @@ http://fieldofview.github.com/krpano_fovplugins/gyro/plugin.html
 This software can be used free of charge and the source code is available under a Creative Commons Attribution license:
         http://creativecommons.org/licenses/by/3.0/
 */
+
+
 var krpanoplugin = function() {
   function z() {
     E = !1;
@@ -46,6 +48,9 @@ var krpanoplugin = function() {
       h = b.beta * v,
       d = b.gamma * v,
       j;
+      a = filterAlph(a);
+      h = filterBeta(h);
+      d = filterGamma(d);
       j = Math.cos(a);
       var a = Math.sin(a),
       f = Math.cos(h),
@@ -119,6 +124,24 @@ var krpanoplugin = function() {
   function I(b) {
     return 0 <= "yesontrue1".indexOf(String(b).toLowerCase())
   }
+
+  function generateFilter(coef){
+    var isInit = false;
+    var c = coef;
+    var last = 0;
+
+    return function(value){
+      if(isInit){
+        last = c*last + (1-c)*value;
+      }else{
+        isInit = true;
+        last = value;
+      }
+      return last;
+    }
+  }
+
+
   var c = null,
   e = null,
   t = !1,
@@ -136,8 +159,20 @@ var krpanoplugin = function() {
   u = 0,
   n = 0,
   x = 0,
-  v = Math.PI / 180;
-  this.registerplugin = function(b, g, m) {
+  v = Math.PI / 180,
+  filterAlph = null,
+  filterBeta = null,
+  filterGamma= null;
+  this.registerplugin = function(krpanointerface, pluginpath, pluginobject){
+
+    var b = krpanointerface;
+    var g = pluginpath;
+    var m = pluginobject;
+    filterAlph = generateFilter(0.8);
+    filterBeta = generateFilter(0.8);
+    filterGamma= generateFilter(0.8);
+    
+    
     c = b;
     e = m;
     if ("%" != c.build.charAt(0) && ("1.0.8.14" > c.version || "2011-03-30" > c.build)) c.trace(3, "gyro plugin - too old krpano version (min. 1.0.8.14)");

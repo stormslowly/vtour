@@ -125,7 +125,7 @@
 			onout=""
 			onover=""
 			onup=""
-			pausedonstart="False"
+			pausedonstart="true"
 			range=""
 			refreshrate=""
 	    />
