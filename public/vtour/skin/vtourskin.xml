@@ -102,6 +102,9 @@
 
     <plugin name="skin_gyro"        keep="true" url="" html5_url="%SWFPATH%/plugins/gyro.js" devices="html5" enabled="false" camroll="true" friction="0" velastic="0" onavailable="if(device.fullscreensupport, if(device.mobile,add(layer[skin_btn_gyro].x,40),add(layer[skin_btn_gyro].x,20));); set(layer[skin_btn_gyro].visible,true);" />
 
+    <plugin name="cart"  keep="true" url="%SWFPATH%/plugins/shoppingcart.js" enabled="true" />
+
+
 
     <!-- Skin Events -->
 
