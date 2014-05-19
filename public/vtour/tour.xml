@@ -152,8 +152,9 @@
 		onhover="showtext('tea table');"
 		onout=""
 		onclick="
+			js( testIt());
 			set(plugin[introduce].y,-800);
-			tween(plugin[introduce].y,0,0.1,easeOutElastic);
+			tween(plugin[introduce].y,0,0.1,easeOutQuad);
 			tween(plugin[introduce].alpha,1,0.1);"
 		ondown=""
 		onup=""
@@ -224,13 +225,13 @@
 				<cube url="panos/house.tiles/mobile_%s.jpg" />
 			</mobile>
 		</image>
-
-
-
-
-		<!-- place your scene hotspots here -->
-
 	</scene>
 
+	<scene name="test" title="test" onstart="" thumburl="panos/1.tiles/thumb.jpg" lat="" lng="" heading="">
+		<view hlookat="0" vlookat="0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+		<image type="CUBE" multires="false" tilesize="512" progressive="false">
+			<cube url="panos/1.tiles/mobile_%s.jpg" />
+		</image>
+	</scene>
 
 </krpano>
