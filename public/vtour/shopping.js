@@ -1,6 +1,6 @@
 'use strict';
 function testIt(){
-  angular.element(document).injector().get('cartService').addItem('box');
+  angular.element(document).injector().get('cartService').addItem(123);
 }
 
 
@@ -15,6 +15,7 @@ app.service('cartService',  function ($rootScope) {
       for (var i = _cart.length - 1; i >= 0; i--) {
         if(_cart[i].id === id){
           _cart[i].amount += 1;
+          $rootScope.$broadcast('cartChanged', _cart);   
           return;
         }
       }
